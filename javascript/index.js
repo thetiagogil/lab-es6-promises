@@ -84,6 +84,9 @@ getInstruction(
                     document.querySelector(
                       "#mashedPotatoes"
                     ).innerHTML += `<li>${step4}</li>`;
+                    document.querySelector(
+                      "#mashedPotatoes"
+                    ).innerHTML += `<li>${"Mashed potatoes are ready!"}</li>`;
                     document
                       .querySelector("#mashedPotatoesImg")
                       .removeAttribute("hidden");
@@ -183,4 +186,42 @@ async function makeBroccoli() {
 makeBroccoli();
 
 // Bonus 2 - Promise all
-// couldn't do it
+// couldn't do the Promise.all() so I just did it with an async promise.
+
+async function makeBrusselsSprouts() {
+  try {
+    const step0 = await obtainInstruction("brusselsSprouts", 0);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step0}</li>`;
+
+    const step1 = await obtainInstruction("brusselsSprouts", 1);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step1}</li>`;
+
+    const step2 = await obtainInstruction("brusselsSprouts", 2);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step2}</li>`;
+
+    const step3 = await obtainInstruction("brusselsSprouts", 3);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step3}</li>`;
+
+    const step4 = await obtainInstruction("brusselsSprouts", 4);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step4}</li>`;
+
+    const step5 = await obtainInstruction("brusselsSprouts", 5);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step5}</li>`;
+
+    const step6 = await obtainInstruction("brusselsSprouts", 6);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step6}</li>`;
+
+    const step7 = await obtainInstruction("brusselsSprouts", 7);
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>`;
+
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>Brussels Sprouts are ready!</li>`;
+
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+makeBrusselsSprouts();
